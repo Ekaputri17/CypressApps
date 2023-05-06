@@ -25,6 +25,9 @@ describe("Test login", function () {
      cy.get("#password").type(data.daftar_user.locked_out.password);
      
      cy.get("#login-button").click()
+
+     //assertions
+     cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Sorry, this user has been locked out.')
     });
   });
   it("Berhasil login menggunakan akun problem_user", function () {
