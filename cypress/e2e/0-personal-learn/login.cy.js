@@ -8,7 +8,7 @@ describe("Test Pembayaran", function () {
       cy.get('#sp_account').select('1')
 
     cy.fixture("user").then(function(data) {
-      cy.paybills(data.daftar_user.zero.amount, data.daftar_user.zero.date, data.daftar_user.zero.description)
+      cy.bills(data.daftar_user.zero.amount, data.daftar_user.zero.date, data.daftar_user.zero.desc)
     })
   })
 })
