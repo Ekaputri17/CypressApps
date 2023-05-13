@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", (username,password) => { 
+    cy.visit("http://zero.webappsecurity.com/index.html"); 
+
+    cy.get("#signin_button").click()
+
+    cy.get("#user_login").type(username);
+    cy.get("#user_password").type(password); 
+    cy.contains("Sign in").click()
+})
+
+Cypress.Commands.add("bills", (amount,date,desc) => {
+    cy.get("#sp_amount").type(amount)
+    cy.get("#sp_date").type(date)
+    cy.get(".ui-state-default.ui-state-highlight").click()
+    cy.get("#sp_description").type(desc, {force: true} )
+    cy.get("#pay_saved_payees").click()
+})
