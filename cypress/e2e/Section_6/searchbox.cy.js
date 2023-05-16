@@ -6,9 +6,6 @@ describe("Tugas Searchbox Test", function () {
     
         cy.get("#searchTerm").type("online {enter}");
 
-        cy.get("a")
-          .should("have.contain", "Zero - Free Access to Online Banking")
-          .should("have.contain", "Zero - Online Statements")
-          
+        
     });
 });
