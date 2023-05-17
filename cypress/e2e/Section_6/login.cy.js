@@ -23,5 +23,5 @@ describe('Tugas Login and Logout Web ZeroBank', () => {
         cy.contains('username').click()
         cy.get('#logout_link').click()
         cy.get('strong').should('contain.text', 'Home')
-    });
+    })
 });
