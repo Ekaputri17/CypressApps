@@ -41,3 +41,14 @@ Cypress.Commands.add("bills", (amount,date,desc) => {
     cy.get("#sp_description").type(desc, {force: true} )
     cy.get("#pay_saved_payees").click()
 })
+
+Cypress.Commands.add("loginsauce", (username, password) => {
+    cy.get("#user-name").type(username)
+    cy.get("#password").type(password)
+})
+
+Cypress.Commands.add("information", (firstname, lastname, zip) => {
+    cy.get("#first-name").type(firstname)
+    cy.get("#last-name").type(lastname)
+    cy.get("#postal-code").type(zip)
+})
